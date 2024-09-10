@@ -224,7 +224,7 @@ const CallManagerPage = () => {
                             navigate('/call-manager/detail' + '/' + record.id, {
                                 state: {
                                     roomName: record.room,
-                                    video: `https://api-vkyc.mascom.vn/file/${record.video}`,
+                                    video: `http://0.0.0.0:5112/file/${record.video}`,
                                     status: record.status,
                                     post_inspection: record.post_inspection,
                                     egress_id: record.egress_id,

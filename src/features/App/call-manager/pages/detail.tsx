@@ -40,7 +40,7 @@ const { Step } = Steps;
 const CallDetailPage = () => {
     const { state } = useCallContext();
     const axiosInstance = axios.create({
-        baseURL: 'https://api-vkyc.mascom.vn',
+        baseURL: 'http://0.0.0.0:5112',
     });
     const location = useLocation();
     const [form] = Form.useForm();
@@ -108,7 +108,7 @@ const CallDetailPage = () => {
                 setEgressId(data[0].egress_id);
                 setIsLiveStream(data[0].status);
                 setIsDisplayVideo(!data[0].status ? true : false);
-                setUrlVideo(`https://api-vkyc.mascom.vn/file/${data[0].video}`);
+                setUrlVideo(`http://0.0.0.0:5112/file/${data[0].video}`);
                 setIsShowConfirm(data[0].post_inspection == 'true' ? false : true);
                 setDataRoom(data[0]);
                 getDataDetailCallChecked(data[0]);
@@ -303,7 +303,7 @@ const CallDetailPage = () => {
 
     const getToken = useCallback(() => {
         if (isLivestream) {
-            const apiUrl = 'https://api-vkyc.mascom.vn/room/agent';
+            const apiUrl = 'http://0.0.0.0:5112/room/agent';
             const data = {
                 roomId: id,
                 agentName: state.info.key,
@@ -459,7 +459,7 @@ const CallDetailPage = () => {
                 console.log(payload.new.status);
                 setEgressId(payload.new.egress_id);
                 setIsLiveStream(payload.new.status);
-                setUrlVideo(`https://api-vkyc.mascom.vn/file/${payload.new.video}`);
+                setUrlVideo(`http://0.0.0.0:5112/file/${payload.new.video}`);
             }, 3000);
             if (!payload.new.status) {
                 Notification('info', 'Cuộc gọi đã kết thúc');
