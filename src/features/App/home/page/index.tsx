@@ -510,7 +510,7 @@ const HomePage = () => {
                         navigate('/call-manager/detail' + '/' + record.id, {
                             state: {
                                 roomName: record.room,
-                                video: `http://0.0.0.0:5112/file/${record.video}`,
+                                video: `http://139.180.188.61:5112/file/${record.video}`,
                                 status: record.status,
                                 post_inspection: record.post_inspection,
                                 egress_id: record.egress_id,

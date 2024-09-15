@@ -2,7 +2,8 @@ module.exports = {
     apps: [
         {
             name: 'vkyc-cms',
-            script: 'npx serve -s ./dist -p 5113',
+            script: 'npx',
+            args: 'serve -s ./dist -p 5113',
             instances: 1,
             exec_mode: 'cluster',
             watch: '.',
